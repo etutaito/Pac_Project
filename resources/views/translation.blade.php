@@ -64,10 +64,10 @@
     </div>
 </header>
 
-<section class="py-5 bg-light" id="scroll-target">
-    <div class="container px-5 my-5 wrapper flex-grow-1">
+<section class="py-5 bg-light h-50">
+    <div class="container px-5 my-5 wrapper flex-grow-1 justify-content-center">
         <div class="row gx-5 align-items-center">
-            <div class="col-lg-6">
+            <div class="col-lg-6 vh-100">
                 {{-- <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                     Language Select
                 </button>
@@ -92,7 +92,7 @@
                     <option value="samoan">Samoan</option>
                     <!-- Add more languages as needed -->
                 </select> --}}
-                <div class="btn-group">
+                <div class="btn-group ">
                     <button type="button" class="btn btn-secondary dropdown-toggle" id="languageButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Language Select
                     </button>
@@ -107,7 +107,7 @@
                 <input type="text" id="wordInput" placeholder="Enter a word">
                 <button id="translateButton">Translate</button>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-6 vh-100">
                 <p id="translationResult"></p>
                 <p id="pronunciation"></p>
             </div>
