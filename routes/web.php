@@ -9,6 +9,7 @@ use App\Http\Controllers\WordController;
 use Symfony\Component\Console\Input\Input;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TranslationController;
+use App\Http\Controllers\FavoriteController;
 
 /*s
 |--------------------------------------------------------------------------
@@ -119,6 +120,14 @@ Route::post('/post-message', [ContactFormController::class,'post_message']);
 // Route::get('/?search', function (Request $request){
 //     dd($request);
 // });
+
+//Favorite word Route
+Route::post('/favorite/toggle/{word}', [FavoriteController::class, 'toggle'])->name('favorite.toggle');
+//View Favorited Words
+Route::get('/favorites', [FavoriteController::class, 'index'])->name('favorites');
+
+// Route::get('/word/{id}', [WordController::class, 'show'])->name('word.show');
+Route::get('/word/{word}/{definition}', [WordController::class, 'show'])->name('word.show');
 
 
 // Route::get('/dashboard', function () {

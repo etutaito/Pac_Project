@@ -46,6 +46,14 @@
                  </h2>
                 <p class="lead fw-normal text-muted mb-4">Definition: {{ $definition->definitions }}</p>
             </div>
+            <form method="POST" action="{{ route('favorite.toggle', $word) }}">
+                @csrf
+                @if (auth()->check() && auth()->user()->favorites->contains($word))
+                    <button type="submit" class="btn btn-danger">Remove from Favorites</button>
+                @else
+                    <button type="submit" class="btn btn-primary">Add to Favorites</button>
+                @endif
+            </form>
         </div>
     </div>
 </section>

@@ -88,7 +88,7 @@
                         <h1>Contact Us</h1>
                         <p>If you have any questions about these Terms and Conditions, You can contact us:</p>
                         <ul>
-                        <li>By visiting this page on our website: <a href="http://www.pacificdictionarytranslate.com" rel="external nofollow noopener" target="_blank">http://www.pacificdictionarytranslate.com</a></li>
+                        <li>By emailing us at: <a href="mailto:admin@pacificprojectfiji.com" rel="external nofollow noopener" target="_blank">admin@pacificprojectfiji.com</a></li>
                         </ul>
                     </div>
                 </div>

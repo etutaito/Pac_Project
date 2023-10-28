@@ -34,6 +34,7 @@
                             <li class="nav-item"><a class="nav-link" href="{{ url('/about') }}">About</a></li>
                             <li class="nav-item"><a class="nav-link" href="{{ url('/dictionary') }}">Dictionary</a></li>
                             <li class="nav-item"><a class="nav-link" href="{{ url('/translation') }}">Translation</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url('/favorites') }}">Favorites</a></li>
                             <li class="nav-item"><a class="nav-link" href="{{ url('/contact') }}">Contact</a></li>
                             <li class="nav-item">
                                 <form action="/logout" class="inline" method="POST">

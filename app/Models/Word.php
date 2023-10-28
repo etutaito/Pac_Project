@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\User;
 
 class Word extends Model
 {
@@ -29,6 +30,12 @@ class Word extends Model
             $query->where('word', 'like', '%' . $filters['search'] . '%');
         }
     }
+
+    public function favorites()
+    {
+        return $this->belongsToMany(User::class, 'favorites', 'word_id', 'user_id');
+    }
+
 
     // public function scopeFilter($query, array $filters) {
     //     $query->when(isset($filters['search']), function ($query) use ($filters) {
