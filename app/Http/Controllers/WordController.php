@@ -56,6 +56,15 @@ class WordController extends Controller
             'images' => $images, //pass images to view
         ]);
     }
+
+    //Word-Of-The-Day Generator
+    
+    public function getRandomWord() {
+        $randomWord = Word::where('languages_id', 1)->inRandomOrder()->with('definitions')->first(); // Get a random word
+
+        return $randomWord;
+    }
+
     
     
 

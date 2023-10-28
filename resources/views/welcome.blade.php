@@ -33,11 +33,30 @@
 <section class="py-5" id="features">
     <div class="container px-5 my-5">
         <div class="row gx-5">
+            @auth
+            <div class="col-lg-4 mb-5 mb-lg-0"><h2 class="fw-bolder mb-0">Here is your word of the day</h2></div>
+            @php
+            $randomWord = app('App\Http\Controllers\WordController')->getRandomWord();
+            @endphp
+            <div class="col-lg-8">
+                <div class="row gx-5 row-cols-1 row-cols-md-2">
+                    <div class="col mb-15 h-100">
+                        <h2 class="h5">{{$randomWord->word}}</h2>
+                        <p class="mb-0">
+                            Definition:
+                            @if ($randomWord->definitions->isNotEmpty())
+                                {{$randomWord->definitions->first()->definitions}}
+                            @else
+                                No definition available
+                            @endif
+                        </p>
+                    </div>
+            @else
             <div class="col-lg-4 mb-5 mb-lg-0"><h2 class="fw-bolder mb-0">Elevate your language journey.</h2></div>
             <div class="col-lg-8">
                 <div class="row gx-5 row-cols-1 row-cols-md-2">
                     <div class="col mb-5 h-100">
-                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i></div>
+                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-file-word-fill"></i></div>
                         <h2 class="h5">Extensive Dictionary</h2>
                         <p class="mb-0">Dive into our cast collection of words, phrases and expressions spanning multiple languages.</p>
                     </div>
@@ -51,6 +70,7 @@
                         <h2 class="h5">Audio Pronounciation</h2>
                         <p class="mb-0">Master the correct pronounciation with our audio guides. Hear speakers enunciate words and phrases, helping you sound like a local in no time.</p>
                     </div>
+                    @endauth
                 </div>
             </div>
         </div>
