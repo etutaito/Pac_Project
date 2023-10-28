@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactFormController;
 use App\Models\Word;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -113,6 +114,7 @@ Route::get('/logn', [UserController::class, 'login'])->name('login')->middleware
 //Log In User
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 
+Route::post('/post-message', [ContactFormController::class,'post_message']);
 
 // Route::get('/?search', function (Request $request){
 //     dd($request);
