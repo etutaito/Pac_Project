@@ -45,6 +45,11 @@
                     {{$word['word']}} 
                  </h2>
                 <p class="lead fw-normal text-muted mb-4">Definition: {{ $definition->definitions }}</p>
+                <audio controls>
+                    <source src="{{ asset($definition->audioUrl) }}" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                
             </div>
             <form method="POST" action="{{ route('favorite.toggle', $word) }}">
                 @csrf

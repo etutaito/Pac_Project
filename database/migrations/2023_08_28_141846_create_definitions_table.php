@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('definitions', function (Blueprint $table) {
             $table->id();
             $table->longText('definitions');
+            $table->string('audio_url')->nullable();
             $table->timestamps();
         });
     }
