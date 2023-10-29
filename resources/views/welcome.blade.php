@@ -34,14 +34,15 @@
     <div class="container px-5 my-5">
         <div class="row gx-5">
             @auth
-            <div class="col-lg-4 mb-5 mb-lg-0"><h2 class="fw-bolder mb-0">Here is your word of the day</h2></div>
+            <div class="col-lg-4 mb-5 mb-lg-0"><h2 class="fw-bolder mb-0"> <span><i class="fa-solid fa-star fa-spin" style="color: #e4e708;"></i></span>Here is your word of the day</h2></div>
             @php
             $randomWord = app('App\Http\Controllers\WordController')->getRandomWord();
             @endphp
             <div class="col-lg-8">
                 <div class="row gx-5 row-cols-1 row-cols-md-2">
                     <div class="col mb-15 h-100">
-                        <h2 class="h5">{{$randomWord->word}}</h2>
+                        <h2 class="h5">
+                            {{$randomWord->word}}</h2>
                         <p class="mb-0">
                             Definition:
                             @if ($randomWord->definitions->isNotEmpty())

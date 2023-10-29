@@ -41,25 +41,11 @@ Route::get('/', function () {
 //Show Dictionary Page
 Route::get('/dictionary', [WordController::class, 'index'])->middleware('auth');
 
-//Show Definition
+//Show Individual Definition
 Route::get('/dictionary/{word}/{definition}', [WordController::class, 'show'])->middleware('auth');
 
 
-
-// Route::get('/dictionary', function () {
-//     return view('dictionary');
-// });
-
-
-// Route::get("/dictionary", [WordController::class, 'search']);
-
-
-
-// Route::get('/dictionary/{word}', [WordController::class, 'show']);
-
-
-
-// Show Single Word for Defintion - Place in Controller
+// Full Implementatio - Show Single Word for Defintion - Place in Controller
 // Route::get('/dictionary/{id}', function($id){
 //     return view ('description', [
 //         'word' => Word::find($id)
@@ -69,10 +55,6 @@ Route::get('/dictionary/{word}/{definition}', [WordController::class, 'show'])->
 
 //Show Translator Page
 Route::get('translation', [TranslationController::class, 'show'])->middleware('auth');
-
-// Route::get('/translation', function () {
-//     return view('translation');
-// });
 
 //Post Translator Function
 Route::post('/translate', [App\Http\Controllers\TranslationController::class, 'translate'])->middleware('auth');
@@ -117,9 +99,7 @@ Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 
 Route::post('/post-message', [ContactFormController::class,'post_message']);
 
-// Route::get('/?search', function (Request $request){
-//     dd($request);
-// });
+
 
 //Favorite word Route
 Route::post('/favorite/toggle/{word}', [FavoriteController::class, 'toggle'])->name('favorite.toggle');
@@ -128,6 +108,12 @@ Route::get('/favorites', [FavoriteController::class, 'index'])->name('favorites'
 
 // Route::get('/word/{id}', [WordController::class, 'show'])->name('word.show');
 Route::get('/word/{word}/{definition}', [WordController::class, 'show'])->name('word.show');
+
+// Help Page - FAQ
+Route::get('/help', function () {
+    return view('help');
+});
+
 
 
 // Route::get('/dashboard', function () {

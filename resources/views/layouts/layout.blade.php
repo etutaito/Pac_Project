@@ -18,6 +18,7 @@
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link rel="stylesheet" href="{{ asset('/css/styles.css') }}">
       
@@ -60,7 +61,7 @@
             @yield('content')
 
               <!-- Footer-->
-        <footer class="bg-dark py-4 mt-auto">
+        <footer class="bg-dark py-4">
             <div class="container px-5">
                 <div class="row align-items-center justify-content-between flex-column flex-sm-row">
                     <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; Pacific Dictionary Translate 2023</div></div>
@@ -70,6 +71,8 @@
                         <a class="link-light small" href="{{ url('/terms') }}">Terms</a>
                         <span class="text-white mx-1">&middot;</span>
                         <a class="link-light small" href="{{ url('/contact') }}">Contact</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="{{ url('/help') }}">Help</a>
                     </div>
                 </div>
             </div>
@@ -92,5 +95,21 @@
                 $('.alert').alert('close');
             }, 5000);
         </script>
+        <script>
+        let a = 0;
+            document.getElementById("sound-icon").addEventListener("click", function () {
+                const audioElement = document.getElementById("audio-element");
+            
+                if (a === 0) {
+                    audioElement.play();
+                    a++;
+                    document.getElementById("sound-icon").style.opacity = "1";
+                } else {
+                    audioElement.pause();
+                    a--;
+                    document.getElementById("sound-icon").style.opacity = "0.5";
+                }
+            });
+            </script>
     </body>
 </html>
