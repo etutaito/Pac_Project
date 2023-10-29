@@ -31,9 +31,11 @@
                         </div>
                         <!-- Email address input-->
                         <div class="form-floating mb-3">
-                            <input class="form-control" name="email" type="email" placeholder="name@example.com" />
+                            <input class="form-control" name="email" type="email" placeholder="name@example.com" value="{{old("email")}}"/>
                             <label for="email">Email address</label>
-                        
+                            @error('email')
+                            <p class="text-danger text-xs mt-1"><small>{{$message}}</small></p>
+                            @enderror
                            
                         </div>
                         <!-- Phone number input-->
